@@ -1,0 +1,14 @@
+{
+  "name": "todo-list",
+  "version": "1.0.0",
+  "description": "In this project we will be developing a todo list app. Your job is to implement the following functionality:",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mayank",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}

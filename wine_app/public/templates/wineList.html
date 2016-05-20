@@ -1,0 +1,110 @@
+
+<div class="container">
+  <div class="margin-top-20">
+    <a href="#" data-toggle="modal" data-target="#add-wine-modal" class="btn btn-primary">Add New Wine</a>
+  </div>
+  <!--One Wine-->
+  <div class="row margin-top-20 wine-container" ng-repeat="wine in wines">
+    <div class="col-sm-3">
+      <img src={{wine.picture}} class="img-responsive" />
+    </div>
+    <div class="col-sm-9">
+      <div class="margin-top-20">
+        <span class="bold">Name: </span><span>{{wine.name}}</span>
+      </div>
+      <div>
+        <span class="bold">Year: </span><span>{{wine.year}}</span>
+      </div>
+      <div>
+        <span class="bold">Grapes: </span><span>{{wine.grapes}}</span>
+      </div>
+      <div>
+        <span class="bold">Country: </span><span>{{wine.country}}</span>
+      </div>
+      <div>
+        <span class="bold">Region: </span><span>{{wine.region}}</span>
+      </div>
+      <div>
+        <span class="bold">Price: </span><span>{{wine.price}}</span>
+      </div>
+      <div>
+        <span class="bold">Description: </span>
+      </div>
+      <div class="margin-top-10">
+        {{wine.description}}
+      </div>
+      <div class="margin-top-20">
+        <a href="#/wines/{{wine.id}}" class="btn btn-default">Edit Wine</a>
+      </div>
+    </div>
+  </div>
+  <!--/One Wine-->
+</div>
+
+<!--Add Wine Modal-->
+<div id="add-wine-modal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Add New Wine</h4>
+      </div>
+      <div class="modal-body">
+        <div class="bold">
+          Name
+        </div>
+        <div class="margin-top-20">
+          <input type="text" class="form-control" ng-model="wine.name"/>
+        </div>
+        <div class="bold margin-top-20">
+          Year
+        </div>
+        <div class="margin-top-20">
+          <input type="text" class="form-control" ng-model="wine.year" />
+        </div>
+        <div class="bold margin-top-20">
+          Grapes
+        </div>
+        <div class="margin-top-20">
+          <input type="text" class="form-control" ng-model="wine.grapes"/>
+        </div>
+        <div class="bold margin-top-20">
+          Country
+        </div>
+        <div class="margin-top-20">
+          <input type="text" class="form-control" ng-model="wine.country"/>
+        </div>
+        <div class="bold margin-top-20">
+          Region
+        </div>
+        <div class="margin-top-20">
+          <input type="text" class="form-control" ng-model="wine.region"/>
+        </div>
+        <div class="bold margin-top-20">
+          Price
+        </div>
+        <div class="margin-top-20">
+          <input type="text" class="form-control" ng-model="wine.price"/>
+        </div>
+        <div class="bold margin-top-20">
+          Picture
+        </div>
+        <div class="margin-top-20">
+          <input type="text" class="form-control" ng-model="wine.picture"/>
+        </div>
+        <div class="bold margin-top-20">
+          Description
+        </div>
+        <div class="margin-top-20">
+          <textarea class="form-control" ng-model="wine.description"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" ng-click="saveWine();"> Save Wine</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!--/Add Wine Modal-->
+

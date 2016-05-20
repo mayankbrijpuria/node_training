@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="todoApp">
+<head >
+	<title>TODO List</title>
+	<!-- Latest compiled and minified CSS -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+	<link rel="stylesheet" href="/css/style.css" />
+	<script type="text/javascript" src="/js/client.js"></script>
+</head>
+<body ng-controller="todoCtrl">
+
+<div class="small-container well">
+	<div class="bold">
+		What do you want to do today?
+	</div>
+
+	<div class="margin-top-20">
+		<input type="text" class="form-control" placeholder="Your todo..." ng-model="todoText"/>
+	</div>
+
+	<div class="margin-top-20">
+		<button type="button" id="submit-todo" class="btn btn-primary" ng-click="addTodo();">Submit Todo</button>
+	</div>
+</div>
+
+<div id="todo-list" class="small-container">
+	<ol >
+		<li ng-repeat="x in todos track by $index"> <div ng-class="{strike: deleted.indexOf($index)>0}">{{ x }} <a href="#" ng-click="delete($index);">Delete</a></div></li>
+
+	</ol>
+</div>
+
+<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+
+</body>
+</html>
